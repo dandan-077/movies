@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: streamlit-movie-recommendation
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    plan: free
+    envVars:
+      - key: TMDB_API_KEY
+        value: 9b6db1f6d700909bc132cf509a1534c7
+    branch: main
